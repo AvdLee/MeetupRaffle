@@ -6,6 +6,12 @@
 
 This is an application to apply a raffle on a [meetup.com](https://www.meetup.com) event. It demonstrates the use of [ALDataRequestView](https://github.com/AvdLee/ALDataRequestView) in combination with setting up an app using [Moya](https://github.com/Moya/Moya).
 
+### ALDataRequestView states in combination with the raffle
+
+Loading state | Empty State | Retry state | Idle state | Raffle State
+------------- | ------------ | ------------ |  ------------ | ------------
+![Loading](Resources/loading.png) | ![Empty](Resources/empty.png) | ![Retry](Resources/failure.png) | ![Idle](Resources/idle.png) | ![Raffle](Resources/raffle.png)
+
 ## Installation
 Simply run
 
