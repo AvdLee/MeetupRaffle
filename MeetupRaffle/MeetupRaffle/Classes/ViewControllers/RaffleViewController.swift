@@ -40,6 +40,7 @@ final class RaffleViewController: UIViewController {
     
     private let membersList = MutableProperty<RSVPMemberList?>(nil)
     private let winningMember = MutableProperty<RSVPMember?>(nil)
+    private let raffleIsRunning = MutableProperty<Bool>(false)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,12 @@ final class RaffleViewController: UIViewController {
         dataRequestView.backgroundColor = view.backgroundColor
         
         // Bind the enabled state of the raffle button to the empty state of the memberslist
-        startRaffleButton.reactive.isEnabled <~ membersList.producer.map { $0 != nil && $0?.isEmpty == false }.observe(on: UIScheduler())
+        startRaffleButton.reactive.isEnabled <~ SignalProducer.combineLatest(membersList.producer, raffleIsRunning.producer).map({ (membersList, raffleIsRunning) -> Bool in
+            return membersList != nil && membersList?.isEmpty == false && raffleIsRunning == false
+        }).observe(on: UIScheduler())
+        
+        // Disable the refresh button when a raffle is running
+        refreshMembersButton.reactive.isEnabled <~ raffleIsRunning.producer.map { $0 == false }.observe(on: UIScheduler())
         
         // Bind the members status labels based on the memberslist
         membersStatusLabel.reactive.text <~ SignalProducer.combineLatest(membersList.producer, winningMember.producer).producer.map({ [weak self] (membersList, winningMember) -> String in
@@ -72,8 +78,7 @@ final class RaffleViewController: UIViewController {
             if let memberImageUrl = member?.photoUrl, let avatarImageView = self?.avatarImageView {
                 Nuke.loadImage(with: memberImageUrl, into: avatarImageView)
             } else {
-                // Show reveal app icon
-                self?.avatarImageView.image = UIImage(named: "reveal_app_icon")
+                self?.showRevealAppIcon()
             }
         }.start()
         
@@ -81,9 +86,14 @@ final class RaffleViewController: UIViewController {
         getEventMembers()
     }
     
+    private func showRevealAppIcon(){
+        avatarImageView.image = UIImage(named: "reveal_app_icon")
+    }
+    
     private func getEventMembers(){
         provider.request(token: MeetupAPI.rsvps(groupName: currentMeetupGroup.rawValue, eventId: currentMeetupGroup.eventId))
             .on(started: { [weak self] () in
+                self?.showRevealAppIcon()
                 self?.membersList.value = nil
                 self?.winningMember.value = nil
             })
@@ -104,10 +114,16 @@ final class RaffleViewController: UIViewController {
     @IBAction func startRaffle(_ sender: Any) {
         membersList.producer
             .skipNil()
+            .onStarted { [weak self] in
+                self?.showRevealAppIcon()
+                self?.raffleIsRunning.value = true // This will disable the raffle button
+            }
             .delay(3.0, on: QueueScheduler()) // Make the raffle more exiting with a delay of 3.0 seconds!
             .onNext { [weak self] (membersList) in
                 self?.winningMember.value = membersList.giveMeARandomAttendingMember()
-            }.attachToDataRequestView(dataRequestView: dataRequestView)
+                self?.raffleIsRunning.value = false // This will enable the raffle button again
+            }
+            .attachToDataRequestView(dataRequestView: dataRequestView)
             .start()
     }
 }
