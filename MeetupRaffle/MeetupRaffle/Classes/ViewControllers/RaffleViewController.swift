@@ -17,7 +17,7 @@ import ReactiveCocoa
 import Nuke
 
 enum MeetupGroup : String {
-    case cocoaHeadsNL = "CocoaHeads_NL"
+    case cocoaHeadsNL = "CocoaHeadsNL"
     
     var eventId:Int {
         switch self {
@@ -68,7 +68,7 @@ final class RaffleViewController: UIViewController {
         }).observe(on: UIScheduler())
         
         // Bind the image of the winning member. If empty, show the reveal app icon
-        winningMember.producer.onNext { [weak self] (member) in
+        winningMember.producer.observe(on: UIScheduler()).onNext { [weak self] (member) in
             if let memberImageUrl = member?.photoUrl, let avatarImageView = self?.avatarImageView {
                 Nuke.loadImage(with: memberImageUrl, into: avatarImageView)
             } else {
@@ -102,7 +102,13 @@ final class RaffleViewController: UIViewController {
     }
     
     @IBAction func startRaffle(_ sender: Any) {
-        winningMember.value = membersList.value?.giveMeARandomAttendingMember()
+        membersList.producer
+            .skipNil()
+            .delay(3.0, on: QueueScheduler()) // Make the raffle more exiting with a delay of 3.0 seconds!
+            .onNext { [weak self] (membersList) in
+                self?.winningMember.value = membersList.giveMeARandomAttendingMember()
+            }.attachToDataRequestView(dataRequestView: dataRequestView)
+            .start()
     }
 }
 
