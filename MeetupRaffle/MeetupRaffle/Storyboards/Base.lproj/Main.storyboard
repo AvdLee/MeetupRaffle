@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No members found for the raffle!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeV-8r-Ded">
-                                <rect key="frame" x="59" y="349" width="257" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No members found for the raffle!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeV-8r-Ded">
+                                <rect key="frame" x="15" y="349" width="345" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="3" width="375" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsU-Dr-6ZZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="188" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="100"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                                 <color key="tintColor" red="0.94901960780000005" green="0.70196078429999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Refresh Members"/>
@@ -62,7 +62,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei4-c9-93h">
-                                                <rect key="frame" x="188" y="0.0" width="187" height="100"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="100"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="tintColor" red="0.83529411760000005" green="0.20392156859999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Start Raffle!"/>
@@ -84,13 +84,14 @@
                             <constraint firstAttribute="trailing" secondItem="EWx-eo-Hxs" secondAttribute="trailing" id="0c4-6b-OYE"/>
                             <constraint firstItem="ntm-3H-nH6" firstAttribute="bottom" secondItem="h0F-44-WbR" secondAttribute="centerY" id="2Jc-lt-583"/>
                             <constraint firstItem="XMX-rp-a9L" firstAttribute="top" secondItem="EWx-eo-Hxs" secondAttribute="bottom" id="2dT-RB-eVy"/>
-                            <constraint firstItem="ntm-3H-nH6" firstAttribute="centerX" secondItem="xeV-8r-Ded" secondAttribute="centerX" id="AYh-fW-w7r"/>
                             <constraint firstItem="ntm-3H-nH6" firstAttribute="centerX" secondItem="h0F-44-WbR" secondAttribute="centerX" id="Aaf-fi-xU8"/>
                             <constraint firstItem="EWx-eo-Hxs" firstAttribute="top" secondItem="Iq3-4D-KxF" secondAttribute="bottom" id="OIf-jU-ctr"/>
                             <constraint firstAttribute="trailing" secondItem="Iq3-4D-KxF" secondAttribute="trailing" id="Tft-Se-7Nz"/>
                             <constraint firstItem="EWx-eo-Hxs" firstAttribute="leading" secondItem="h0F-44-WbR" secondAttribute="leading" id="UP3-V5-zrd"/>
+                            <constraint firstItem="xeV-8r-Ded" firstAttribute="leading" secondItem="h0F-44-WbR" secondAttribute="leading" constant="15" id="WZW-Zv-3IG"/>
                             <constraint firstItem="Iq3-4D-KxF" firstAttribute="leading" secondItem="h0F-44-WbR" secondAttribute="leading" id="WZz-V7-1mT"/>
                             <constraint firstItem="xeV-8r-Ded" firstAttribute="top" secondItem="ntm-3H-nH6" secondAttribute="bottom" constant="15" id="ZeF-Tn-Dg9"/>
+                            <constraint firstAttribute="trailing" secondItem="xeV-8r-Ded" secondAttribute="trailing" constant="15" id="ZlH-s5-nml"/>
                             <constraint firstItem="Iq3-4D-KxF" firstAttribute="top" secondItem="E7a-Fg-H2v" secondAttribute="bottom" id="sNM-Eu-YSy"/>
                         </constraints>
                     </view>
@@ -166,13 +167,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No members found for the raffle!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNF-2C-yYY">
-                                <rect key="frame" x="59" y="439" width="257" height="21"/>
+                                <rect key="frame" x="59" y="394" width="257" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reveal_app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-Ix-Zq0">
-                                <rect key="frame" x="97" y="244" width="180" height="180"/>
+                                <rect key="frame" x="142" y="289" width="90" height="90"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.16862745100000001" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,6 +209,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="reveal_app_icon" width="180" height="180"/>
+        <image name="reveal_app_icon" width="90" height="90"/>
     </resources>
 </document>

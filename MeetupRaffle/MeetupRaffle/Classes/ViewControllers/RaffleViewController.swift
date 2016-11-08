@@ -16,7 +16,7 @@ import ReactiveSwift
 import ReactiveCocoa
 import Nuke
 
-enum MeetupGroups : String {
+enum MeetupGroup : String {
     case cocoaHeadsNL = "CocoaHeadsNL"
     
     var eventId:Int {
@@ -29,6 +29,9 @@ enum MeetupGroups : String {
 
 final class RaffleViewController: UIViewController {
 
+    /// Change this to your meetup group
+    private let currentMeetupGroup:MeetupGroup = .cocoaHeadsNL
+    
     @IBOutlet private var dataRequestView: ALDataRequestView!
     @IBOutlet private var refreshMembersButton: UIButton!
     @IBOutlet private var startRaffleButton: UIButton!
@@ -41,7 +44,7 @@ final class RaffleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "CocoaHeadsNL @ Triple"
+        title = "Reveal license raffle"
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
         avatarImageView.layer.borderColor = UIColor.white.cgColor
@@ -54,11 +57,11 @@ final class RaffleViewController: UIViewController {
         startRaffleButton.reactive.isEnabled <~ membersList.producer.map { $0 != nil && $0?.isEmpty == false }.observe(on: UIScheduler())
         
         // Bind the members status labels based on the memberslist
-        membersStatusLabel.reactive.text <~ SignalProducer.combineLatest(membersList.producer, winningMember.producer).producer.map({ (membersList, winningMember) -> String in
+        membersStatusLabel.reactive.text <~ SignalProducer.combineLatest(membersList.producer, winningMember.producer).producer.map({ [weak self] (membersList, winningMember) -> String in
             if let winningMember = winningMember {
                 return "Congratulations \(winningMember.name)!"
-            } else if let membersList = membersList {
-                return "A total of \(membersList.attending.count) members is attending"
+            } else if let membersList = membersList, let currentMeetupGroup = self?.currentMeetupGroup {
+                return "A total of \(membersList.attending.count) members is attending \(currentMeetupGroup.rawValue) meetup"
             } else {
                 return "We didn't find any members for the raffle"
             }
@@ -79,7 +82,7 @@ final class RaffleViewController: UIViewController {
     }
     
     private func getEventMembers(){
-        provider.request(token: MeetupAPI.rsvps(groupName: MeetupGroups.cocoaHeadsNL.rawValue, eventId: MeetupGroups.cocoaHeadsNL.eventId))
+        provider.request(token: MeetupAPI.rsvps(groupName: currentMeetupGroup.rawValue, eventId: currentMeetupGroup.eventId))
             .on(started: { [weak self] () in
                 self?.membersList.value = nil
                 self?.winningMember.value = nil
