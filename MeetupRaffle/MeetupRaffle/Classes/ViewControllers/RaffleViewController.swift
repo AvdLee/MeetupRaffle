@@ -82,6 +82,7 @@ final class RaffleViewController: UIViewController {
         provider.request(token: MeetupAPI.rsvps(groupName: MeetupGroups.cocoaHeadsNL.rawValue, eventId: MeetupGroups.cocoaHeadsNL.eventId))
             .on(started: { [weak self] () in
                 self?.membersList.value = nil
+                self?.winningMember.value = nil
             })
             .delay(1.0, on: QueueScheduler()) // A small delay to show the loading state for ALDataRequestView
             .filterSuccessfulStatusCodes() // Make sure only successful statuscodes pass
