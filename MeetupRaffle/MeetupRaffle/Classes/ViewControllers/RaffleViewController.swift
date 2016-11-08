@@ -17,7 +17,7 @@ import ReactiveCocoa
 import Nuke
 
 enum MeetupGroup : String {
-    case cocoaHeadsNL = "CocoaHeadsNL"
+    case cocoaHeadsNL = "CocoaHeads_NL"
     
     var eventId:Int {
         switch self {
@@ -103,12 +103,6 @@ final class RaffleViewController: UIViewController {
     
     @IBAction func startRaffle(_ sender: Any) {
         winningMember.value = membersList.value?.giveMeARandomAttendingMember()
-//        guard let membersList = membersList.value else { return }
-//        let winner = membersList.giveMeARandomAttendingMember()
-//        
-//        let alert = UIAlertController(title: "The winner is..", message: "Congratulations \(winner.name)", preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//        present(alert, animated: true, completion: nil)
     }
 }
 

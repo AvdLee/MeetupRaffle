@@ -33,7 +33,7 @@ struct RSVPMemberList : ALJSONAble {
 
 extension RSVPMemberList : Emptyable {
     var isEmpty:Bool {
-        return attending.count == 0 // We only check the attending members for an event
+        return true //attending.count == 0 // We only check the attending members for an event
     }
 }
 

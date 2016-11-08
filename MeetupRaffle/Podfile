@@ -11,7 +11,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target 'MeetupRaffle' do
-    pod 'ALDataRequestView/ReactiveCocoa'
+    pod 'ALDataRequestView/ReactiveCocoa', :git => 'https://github.com/AvdLee/ALDataRequestView'
     pod 'Moya/ReactiveCocoa'
     pod 'Moya-JASONMapper'
     pod 'RxSwift'
