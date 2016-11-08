@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17DC9A43FADBBB3935F8833C /* Pods_MeetupRaffle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1732691E71A8DF1FDB40F /* Pods_MeetupRaffle.framework */; };
+		733D6EEA1DD27A7A005FB6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EDD1DD27A7A005FB6AF /* Assets.xcassets */; };
+		733D6EEB1DD27A7A005FB6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EE01DD27A7A005FB6AF /* AppDelegate.swift */; };
+		733D6EED1DD27A7A005FB6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE41DD27A7A005FB6AF /* LaunchScreen.storyboard */; };
+		733D6EEE1DD27A7A005FB6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE61DD27A7A005FB6AF /* Main.storyboard */; };
+		733D6EEF1DD27A7A005FB6AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 733D6EE91DD27A7A005FB6AF /* Info.plist */; };
+		733D6EF21DD27AE1005FB6AF /* RaffleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF01DD27AE1005FB6AF /* RaffleViewController.swift */; };
+		733D6EF31DD27AE1005FB6AF /* ReloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF11DD27AE1005FB6AF /* ReloadViewController.swift */; };
+		733D6EF91DD27AE8005FB6AF /* MeetupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF51DD27AE8005FB6AF /* MeetupAPI.swift */; };
+		733D6EFA1DD27AE8005FB6AF /* RSVPMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF71DD27AE8005FB6AF /* RSVPMember.swift */; };
+		733D6EFB1DD27AE8005FB6AF /* RSVPMemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D6EF81DD27AE8005FB6AF /* RSVPMemberList.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1747AAAC472986B9840C4944 /* Pods-MeetupRaffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupRaffle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupRaffle/Pods-MeetupRaffle.debug.xcconfig"; sourceTree = "<group>"; };
+		733D6EC81DD279F5005FB6AF /* MeetupRaffle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupRaffle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		733D6EDD1DD27A7A005FB6AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		733D6EE01DD27A7A005FB6AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		733D6EE51DD27A7A005FB6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		733D6EE71DD27A7A005FB6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		733D6EE91DD27A7A005FB6AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		733D6EF01DD27AE1005FB6AF /* RaffleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaffleViewController.swift; sourceTree = "<group>"; };
+		733D6EF11DD27AE1005FB6AF /* ReloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewController.swift; sourceTree = "<group>"; };
+		733D6EF51DD27AE8005FB6AF /* MeetupAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetupAPI.swift; sourceTree = "<group>"; };
+		733D6EF71DD27AE8005FB6AF /* RSVPMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSVPMember.swift; sourceTree = "<group>"; };
+		733D6EF81DD27AE8005FB6AF /* RSVPMemberList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSVPMemberList.swift; sourceTree = "<group>"; };
+		B5D1732691E71A8DF1FDB40F /* Pods_MeetupRaffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeetupRaffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F279864B7B79C7F5E0596A05 /* Pods-MeetupRaffle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeetupRaffle.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeetupRaffle/Pods-MeetupRaffle.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		733D6EC51DD279F5005FB6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17DC9A43FADBBB3935F8833C /* Pods_MeetupRaffle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		733D6EBF1DD279F5005FB6AF = {
+			isa = PBXGroup;
+			children = (
+				733D6ECA1DD279F5005FB6AF /* MeetupRaffle */,
+				733D6EC91DD279F5005FB6AF /* Products */,
+				8C8D4CF81468E2DC1F518596 /* Pods */,
+				B231EE2E429F49862AAC2010 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		733D6EC91DD279F5005FB6AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EC81DD279F5005FB6AF /* MeetupRaffle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		733D6ECA1DD279F5005FB6AF /* MeetupRaffle */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EDD1DD27A7A005FB6AF /* Assets.xcassets */,
+				733D6EDE1DD27A7A005FB6AF /* Classes */,
+				733D6EE31DD27A7A005FB6AF /* Storyboards */,
+				733D6EE81DD27A7A005FB6AF /* Supporting Files */,
+			);
+			path = MeetupRaffle;
+			sourceTree = "<group>";
+		};
+		733D6EDE1DD27A7A005FB6AF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EDF1DD27A7A005FB6AF /* Application */,
+				733D6EF41DD27AE8005FB6AF /* Networking */,
+				733D6EE11DD27A7A005FB6AF /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		733D6EDF1DD27A7A005FB6AF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EE01DD27A7A005FB6AF /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		733D6EE11DD27A7A005FB6AF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EF01DD27AE1005FB6AF /* RaffleViewController.swift */,
+				733D6EF11DD27AE1005FB6AF /* ReloadViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		733D6EE31DD27A7A005FB6AF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EE41DD27A7A005FB6AF /* LaunchScreen.storyboard */,
+				733D6EE61DD27A7A005FB6AF /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		733D6EE81DD27A7A005FB6AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EE91DD27A7A005FB6AF /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		733D6EF41DD27AE8005FB6AF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EF51DD27AE8005FB6AF /* MeetupAPI.swift */,
+				733D6EF61DD27AE8005FB6AF /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		733D6EF61DD27AE8005FB6AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				733D6EF71DD27AE8005FB6AF /* RSVPMember.swift */,
+				733D6EF81DD27AE8005FB6AF /* RSVPMemberList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8C8D4CF81468E2DC1F518596 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1747AAAC472986B9840C4944 /* Pods-MeetupRaffle.debug.xcconfig */,
+				F279864B7B79C7F5E0596A05 /* Pods-MeetupRaffle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B231EE2E429F49862AAC2010 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5D1732691E71A8DF1FDB40F /* Pods_MeetupRaffle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		733D6EC71DD279F5005FB6AF /* MeetupRaffle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 733D6EDA1DD279F5005FB6AF /* Build configuration list for PBXNativeTarget "MeetupRaffle" */;
+			buildPhases = (
+				B3808038E485DADF76E25F30 /* [CP] Check Pods Manifest.lock */,
+				733D6EC41DD279F5005FB6AF /* Sources */,
+				733D6EC51DD279F5005FB6AF /* Frameworks */,
+				733D6EC61DD279F5005FB6AF /* Resources */,
+				F96A674CC64488CA14F0333A /* [CP] Embed Pods Frameworks */,
+				498A736CC75E8C0DD3CB7A41 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeetupRaffle;
+			productName = MeetupRaffle;
+			productReference = 733D6EC81DD279F5005FB6AF /* MeetupRaffle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		733D6EC01DD279F5005FB6AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = alee;
+				TargetAttributes = {
+					733D6EC71DD279F5005FB6AF = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 4QMDKC8VLJ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 733D6EC31DD279F5005FB6AF /* Build configuration list for PBXProject "MeetupRaffle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 733D6EBF1DD279F5005FB6AF;
+			productRefGroup = 733D6EC91DD279F5005FB6AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				733D6EC71DD279F5005FB6AF /* MeetupRaffle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		733D6EC61DD279F5005FB6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733D6EEF1DD27A7A005FB6AF /* Info.plist in Resources */,
+				733D6EEE1DD27A7A005FB6AF /* Main.storyboard in Resources */,
+				733D6EEA1DD27A7A005FB6AF /* Assets.xcassets in Resources */,
+				733D6EED1DD27A7A005FB6AF /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		498A736CC75E8C0DD3CB7A41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeetupRaffle/Pods-MeetupRaffle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3808038E485DADF76E25F30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F96A674CC64488CA14F0333A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeetupRaffle/Pods-MeetupRaffle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		733D6EC41DD279F5005FB6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				733D6EFB1DD27AE8005FB6AF /* RSVPMemberList.swift in Sources */,
+				733D6EF91DD27AE8005FB6AF /* MeetupAPI.swift in Sources */,
+				733D6EF21DD27AE1005FB6AF /* RaffleViewController.swift in Sources */,
+				733D6EEB1DD27A7A005FB6AF /* AppDelegate.swift in Sources */,
+				733D6EFA1DD27AE8005FB6AF /* RSVPMember.swift in Sources */,
+				733D6EF31DD27AE1005FB6AF /* ReloadViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		733D6EE41DD27A7A005FB6AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				733D6EE51DD27A7A005FB6AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		733D6EE61DD27A7A005FB6AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				733D6EE71DD27A7A005FB6AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		733D6ED81DD279F5005FB6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		733D6ED91DD279F5005FB6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		733D6EDB1DD279F5005FB6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1747AAAC472986B9840C4944 /* Pods-MeetupRaffle.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4QMDKC8VLJ;
+				INFOPLIST_FILE = "MeetupRaffle/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alee.MeetupRaffle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		733D6EDC1DD279F5005FB6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F279864B7B79C7F5E0596A05 /* Pods-MeetupRaffle.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4QMDKC8VLJ;
+				INFOPLIST_FILE = "MeetupRaffle/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alee.MeetupRaffle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		733D6EC31DD279F5005FB6AF /* Build configuration list for PBXProject "MeetupRaffle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				733D6ED81DD279F5005FB6AF /* Debug */,
+				733D6ED91DD279F5005FB6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		733D6EDA1DD279F5005FB6AF /* Build configuration list for PBXNativeTarget "MeetupRaffle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				733D6EDB1DD279F5005FB6AF /* Debug */,
+				733D6EDC1DD279F5005FB6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 733D6EC01DD279F5005FB6AF /* Project object */;
+}
