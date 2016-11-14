@@ -15,6 +15,7 @@ target 'MeetupRaffle' do
     pod 'Moya/ReactiveCocoa'
     pod 'Moya-JASONMapper'
     pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'Moya-JASONMapper/ReactiveCocoa'
     pod 'ALReactiveCocoaExtension'
     pod 'ReactiveCocoa', :git => 'https://github.com/ReactiveCocoa/ReactiveCocoa.git'

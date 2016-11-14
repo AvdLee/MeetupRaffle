@@ -33,8 +33,8 @@ extension MeetupAPI: TargetType {
         switch self {
         case .rsvps(_, _):
             return [
-                "sig_id": 187030538,
-                "sig": "b95fea8e1f49e879f063c9a5f999235ddb29f353",
+                "sig_id": 187030538, // Make sure these are up to date for your account
+                "sig": "1753151958af38f404ef59fbc434a6fa8a8f6097",  // Make sure these are up to date for your account
                 "photo-host": "public"
             ]
         }

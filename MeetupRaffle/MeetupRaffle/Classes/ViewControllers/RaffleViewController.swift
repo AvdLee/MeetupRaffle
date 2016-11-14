@@ -19,10 +19,17 @@ import Nuke
 enum MeetupGroup : String {
     case cocoaHeadsNL = "CocoaHeadsNL"
     
+    var eventName:String {
+        switch self {
+        case .cocoaHeadsNL:
+            return "DO iOS"
+        }
+    }
+    
     var eventId:Int {
         switch self {
         case .cocoaHeadsNL:
-            return 234463930
+            return 232363002
         }
     }
 }
@@ -67,7 +74,7 @@ final class RaffleViewController: UIViewController {
             if let winningMember = winningMember {
                 return "Congratulations \(winningMember.name)!"
             } else if let membersList = membersList, let currentMeetupGroup = self?.currentMeetupGroup {
-                return "A total of \(membersList.attending.count) members is attending \(currentMeetupGroup.rawValue) meetup"
+                return "A total of \(membersList.attending.count) members is attending \(currentMeetupGroup.eventName)"
             } else {
                 return "We didn't find any members for the raffle"
             }
