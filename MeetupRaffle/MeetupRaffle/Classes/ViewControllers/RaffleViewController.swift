@@ -29,7 +29,7 @@ enum MeetupGroup : String {
     var eventId:Int {
         switch self {
         case .cocoaHeadsNL:
-            return 232363002
+            return 235593139
         }
     }
 }
@@ -48,6 +48,7 @@ final class RaffleViewController: UIViewController {
     private let membersList = MutableProperty<RSVPMemberList?>(nil)
     private let winningMember = MutableProperty<RSVPMember?>(nil)
     private let raffleIsRunning = MutableProperty<Bool>(false)
+    private var raffleDisposable:Disposable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,11 +99,12 @@ final class RaffleViewController: UIViewController {
     }
     
     private func getEventMembers(){
+        raffleDisposable?.dispose()
         provider.request(token: MeetupAPI.rsvps(groupName: currentMeetupGroup.rawValue, eventId: currentMeetupGroup.eventId))
             .on(started: { [weak self] () in
                 self?.showRevealAppIcon()
-                self?.membersList.value = nil
                 self?.winningMember.value = nil
+                self?.membersList.value = nil
             })
             .delay(1.0, on: QueueScheduler()) // A small delay to show the loading state for ALDataRequestView
             .filterSuccessfulStatusCodes() // Make sure only successful statuscodes pass
@@ -119,7 +121,8 @@ final class RaffleViewController: UIViewController {
     }
     
     @IBAction func startRaffle(_ sender: Any) {
-        membersList.producer
+        raffleDisposable?.dispose()
+        raffleDisposable = membersList.producer
             .skipNil()
             .onStarted { [weak self] in
                 self?.showRevealAppIcon()
