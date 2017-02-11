@@ -9,14 +9,14 @@
 import UIKit
 import ALDataRequestView
 
-class ReloadViewController: UIViewController, ALDataReloadType {
+final class ReloadViewController: UIViewController, ALDataReloadType {
 
     @IBOutlet var retryButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = AppSettings.Colors.primaryBackground
     }
 
     func setupForReloadType(reloadType:ReloadType){

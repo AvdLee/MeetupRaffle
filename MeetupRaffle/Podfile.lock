@@ -30,8 +30,6 @@ PODS:
   - Nuke (4.1.2)
   - PureLayout (3.0.2)
   - ReachabilitySwift (3)
-  - ReactiveCocoa (5.0.0-alpha.3):
-    - ReactiveSwift (~> 1.0.0-alpha.3)
   - ReactiveSwift (1.0.0-alpha.3):
     - Result (~> 3.0)
   - Result (3.0.0)
@@ -46,23 +44,18 @@ DEPENDENCIES:
   - Moya-JASONMapper/ReactiveCocoa
   - Moya/ReactiveCocoa
   - Nuke
-  - ReactiveCocoa (from `https://github.com/ReactiveCocoa/ReactiveCocoa.git`)
+  - ReactiveSwift
   - RxCocoa
   - RxSwift
 
 EXTERNAL SOURCES:
   ALDataRequestView:
     :git: https://github.com/AvdLee/ALDataRequestView
-  ReactiveCocoa:
-    :git: https://github.com/ReactiveCocoa/ReactiveCocoa.git
 
 CHECKOUT OPTIONS:
   ALDataRequestView:
     :commit: 5dac8e5a3c597a479fbda958d31f8a30cf0a88df
     :git: https://github.com/AvdLee/ALDataRequestView
-  ReactiveCocoa:
-    :commit: 556571e1beb1401fcf8da16aa24ffd38d7b3f56d
-    :git: https://github.com/ReactiveCocoa/ReactiveCocoa.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -74,12 +67,11 @@ SPEC CHECKSUMS:
   Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  ReactiveCocoa: dd6fd3ca8c061622040bd2c9e92a43fd205d622f
   ReactiveSwift: d67b677f9574ba614d94022a88fcf456e77fa515
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
 
-PODFILE CHECKSUM: 3edf1c2938ffe294e2fac69b301e6bb189467e78
+PODFILE CHECKSUM: 47b1ef20f2f7d039ed285deedf9e33ea0faa24d4
 
 COCOAPODS: 1.1.1

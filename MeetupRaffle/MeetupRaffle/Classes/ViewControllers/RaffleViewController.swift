@@ -16,29 +16,8 @@ import ReactiveSwift
 import ReactiveCocoa
 import Nuke
 
-enum MeetupGroup : String {
-    case cocoaHeadsNL = "CocoaHeadsNL"
-    
-    var eventName:String {
-        switch self {
-        case .cocoaHeadsNL:
-            return "DO iOS"
-        }
-    }
-    
-    var eventId:Int {
-        switch self {
-        case .cocoaHeadsNL:
-            return 235593139
-        }
-    }
-}
-
 final class RaffleViewController: UIViewController {
 
-    /// Change this to your meetup group
-    private let currentMeetupGroup:MeetupGroup = .cocoaHeadsNL
-    
     @IBOutlet private var dataRequestView: ALDataRequestView!
     @IBOutlet private var refreshMembersButton: UIButton!
     @IBOutlet private var startRaffleButton: UIButton!
@@ -54,6 +33,9 @@ final class RaffleViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Reveal license raffle"
+        
+        view.backgroundColor = AppSettings.Colors.primaryBackground
+        membersStatusLabel.textColor = AppSettings.Colors.primaryText
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
         avatarImageView.layer.borderColor = UIColor.white.cgColor
@@ -74,8 +56,8 @@ final class RaffleViewController: UIViewController {
         membersStatusLabel.reactive.text <~ SignalProducer.combineLatest(membersList.producer, winningMember.producer).producer.map({ [weak self] (membersList, winningMember) -> String in
             if let winningMember = winningMember {
                 return "Congratulations \(winningMember.name)!"
-            } else if let membersList = membersList, let currentMeetupGroup = self?.currentMeetupGroup {
-                return "A total of \(membersList.attending.count) members is attending \(currentMeetupGroup.eventName)"
+            } else if let membersList = membersList {
+                return "A total of \(membersList.attending.count) members is attending \(AppSettings.Meetup.name)"
             } else {
                 return "We didn't find any members for the raffle"
             }
@@ -95,12 +77,12 @@ final class RaffleViewController: UIViewController {
     }
     
     private func showRevealAppIcon(){
-        avatarImageView.image = UIImage(named: "reveal_app_icon")
+        avatarImageView.image = UIImage(named: "raffle_logo")
     }
     
     private func getEventMembers(){
         raffleDisposable?.dispose()
-        provider.request(token: MeetupAPI.rsvps(groupName: currentMeetupGroup.rawValue, eventId: currentMeetupGroup.eventId))
+        provider.request(token: MeetupAPI.rsvps(groupName: AppSettings.Meetup.group, eventId: AppSettings.Meetup.eventId))
             .on(started: { [weak self] () in
                 self?.showRevealAppIcon()
                 self?.winningMember.value = nil
